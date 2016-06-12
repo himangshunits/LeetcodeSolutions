@@ -10,6 +10,7 @@
 #define AllSolutions_h
 #include <string>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -29,6 +30,43 @@ public:
     bool CanWinNim();
 private:
     int _n;
+};
+
+
+class AddNumbers{
+public:
+    AddNumbers(int n);
+    int GetAddedNumber();
+    
+private:
+    int _n;
+
+};
+
+class SetIntersect{
+public:
+    SetIntersect(vector<int>&, vector<int>&);
+    vector<int> FindIntersect();
+    
+private:
+    vector<int> _first;
+    vector<int> _second;
+
+
+};
+
+
+class MoveZeros{
+public:
+    MoveZeros(vector<int>& nums);
+    void MoveInplace();
+    
+private:
+    
+    vector<int> _nums;
+
+
+
 };
 
 
