@@ -58,15 +58,8 @@ private:
 
 class MoveZeros{
 public:
-    MoveZeros(vector<int>& nums);
-    void MoveInplace();
-    
-private:
-    
-    vector<int> _nums;
-
-
-
+    MoveZeros();
+    void MoveInplace(vector<int>& nums);
 };
 
 

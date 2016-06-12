@@ -38,9 +38,9 @@ int main(int argc, const char * argv[]) {
         cout<<*it<<" :: ";
     } */
     
-    vector<int> b = {2, 2, 5, 0,  8, 0, 3};
-    MoveZeros x(b);
-    x.MoveInplace();
+    vector<int> b = {0, 0 ,1, 3, 5, 4, 6, 0, 3, 0};
+    MoveZeros x;
+    x.MoveInplace(b);
     for (auto it = b.begin(); it != b.end(); it++ ){
         cout<<*it<<" :: ";
     }
