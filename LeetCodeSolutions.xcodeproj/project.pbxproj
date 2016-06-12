@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		42A637FF1D0CED7C0078757A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42A637FE1D0CED7C0078757A /* main.cpp */; };
 		42A638071D0CEDE40078757A /* StringReverse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42A638061D0CEDE40078757A /* StringReverse.cpp */; };
+		42A638091D0CF8650078757A /* NimGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42A638081D0CF8650078757A /* NimGame.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,7 @@
 		42A637FE1D0CED7C0078757A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		42A638051D0CEDB00078757A /* AllSolutions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllSolutions.h; sourceTree = "<group>"; };
 		42A638061D0CEDE40078757A /* StringReverse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringReverse.cpp; sourceTree = "<group>"; };
+		42A638081D0CF8650078757A /* NimGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NimGame.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				42A637FE1D0CED7C0078757A /* main.cpp */,
 				42A638051D0CEDB00078757A /* AllSolutions.h */,
 				42A638061D0CEDE40078757A /* StringReverse.cpp */,
+				42A638081D0CF8650078757A /* NimGame.cpp */,
 			);
 			path = LeetCodeSolutions;
 			sourceTree = "<group>";
@@ -124,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42A637FF1D0CED7C0078757A /* main.cpp in Sources */,
+				42A638091D0CF8650078757A /* NimGame.cpp in Sources */,
 				42A638071D0CEDE40078757A /* StringReverse.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
