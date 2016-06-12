@@ -18,6 +18,5 @@ MoveZeros::MoveZeros(vector<int>& nums){
 
 void MoveZeros::MoveInplace(){
     
-
 }
 
