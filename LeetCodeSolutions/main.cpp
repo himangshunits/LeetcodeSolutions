@@ -8,42 +8,69 @@
 
 #include <iostream>
 #include "AllSolutions.h"
+#include <cmath>
+#include <unordered_set>
+#include <unordered_map>
 
 using namespace std;
+vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
+    vector<int> result;
+    unordered_map<int, int> dict1;
+    unordered_map<int,int> dict2;
+    for(auto it = nums1.begin(); it!= nums1.end();it++){
+        if(dict1.find(*it) == dict1.end())
+                    dict1[*it] = 1;
+        else
+            dict1[*it]++;
+    }
+    
+    for(auto it = nums2.begin(); it!= nums2.end();it++){
+        if(dict2.find(*it) == dict2.end())
+            dict2[*it] = 1;
+        else
+            dict2[*it]++;
+    }
+    
+    for(auto it = dict1.begin(); it!= dict1.end();it++){
+        auto find = dict2.find(it->first);
+        if(find == dict2.end())
+            continue;
+        else{
+            int a = find->second;
+            int b = it->second;
+            int common = min(a, b);
+            for(int i = 0; i<common; i++){
+                result.push_back(it->first);
+            }
+        }
+    }
+    return result;
+}
+
+
+int hammingWeight(uint32_t n) {
+    int count = 0;
+    uint32_t mask = 0x01;
+    while(n > 0){
+        uint32_t temp = n & mask;
+        n = n >> 1;
+        count += temp;
+    }
+    return count;
+}
+
+
+bool isPowerOfTwo(int n) {
+    bool result = false;
+    
+    
+    return result;
+    
+}
+
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    /*StringReverse str("");
-    string result = str.GetReversedString();
-    cout<<"The string is = "<<result<<endl;*/
-    
-    /*for(int i = 0 ; i< 10; i++){
-        NimGame nim(i+1);
-        cout<<"Win Status for "<<(i + 1)<<" : "<<nim.CanWinNim()<<endl;
-    }*/
-    
-    
-    /*for(int i = 0 ; i< 123; i++){
-     AddNumbers n(i+1);
-     cout<<"Add numbers Status for "<<(i + 1)<<" : "<<n.GetAddedNumber()<<endl;
-    }*/
-    
-    
-    /*vector<int> a = {1,2,2,3,4};
-    vector<int> b = {2,2,5};
-    SetIntersect set(a,b);
-    vector<int> result = set.FindIntersect();
-    for (auto it = result.begin(); it != result.end(); it++ ){
-        cout<<*it<<" :: ";
-    } */
-    
-    vector<int> b = {0, 0 ,1, 3, 5, 4, 6, 0, 3, 0};
-    MoveZeros x;
-    x.MoveInplace(b);
-    for (auto it = b.begin(); it != b.end(); it++ ){
-        cout<<*it<<" :: ";
-    }
-
+    int result = hammingWeight(5);
+    cout<<"The no. of ones = "<<result<<endl;
     return 0;
 }

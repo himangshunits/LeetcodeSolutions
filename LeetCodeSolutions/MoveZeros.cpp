@@ -9,9 +9,8 @@
 #include <stdio.h>
 #include "AllSolutions.h"
 
-
 MoveZeros::MoveZeros(){}
-void MoveZeros::MoveInplace(vector<int>& nums){
+void MoveZeros::MoveInplace(vector<int>& nums){    
     if(nums.empty())
         return;
     unsigned long readIndex = 0;
