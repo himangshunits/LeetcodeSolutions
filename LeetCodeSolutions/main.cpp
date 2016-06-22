@@ -61,16 +61,20 @@ int hammingWeight(uint32_t n) {
 
 
 bool isPowerOfTwo(int n) {
+    if(n == 0)
+        return false;
     bool result = false;
-    
-    
+    double x = log2(n);
+    if(round(x) == x)
+        result = true;
+    else
+        result = false;
     return result;
-    
 }
 
 
 int main(int argc, const char * argv[]) {
-    int result = hammingWeight(5);
-    cout<<"The no. of ones = "<<result<<endl;
+    bool result = isPowerOfTwo(0);
+    cout<<"The result is = "<<result<<endl;
     return 0;
 }
