@@ -11,6 +11,7 @@
 #include <cmath>
 #include <unordered_set>
 #include <unordered_map>
+#include <climits>
 
 using namespace std;
 vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
@@ -72,9 +73,56 @@ bool isPowerOfTwo(int n) {
     return result;
 }
 
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+    };
+
+ListNode* reverseList(ListNode* head) {
+    if(head == NULL || head->next == NULL)
+        return head;
+    if(head->next->next == NULL){
+        head->next->next = head;
+        ListNode* temp = head->next;
+        head->next = NULL;
+        return temp;
+    }
+    ListNode* newHead = reverseList(head->next);
+    ListNode* temp = head->next;
+    temp->next = head;
+    head->next = NULL;
+    return newHead;
+}
+
+int maxProfit(vector<int>& prices) {
+    int result = 0;
+    if(prices.empty() || prices.size() == 1)
+        return result;
+    int current_min = INT_MAX;
+    int current_max = INT_MIN;
+    unsigned long i = 0;
+    unsigned long j = prices.size() - 1;
+    while(i <= j + 1){
+        if(prices[i] < current_min){
+            current_min = prices[i];
+        }
+        if(prices[j] > current_max){
+            current_max = prices[j];
+        }
+        i++;
+        j--;
+    }
+    result = current_max - current_min;
+    if(result >= 0)
+        return result;
+    else
+        return 0;
+}
 
 int main(int argc, const char * argv[]) {
-    bool result = isPowerOfTwo(0);
+    vector<int> data = {1,2};
+    int result = maxProfit(data);
     cout<<"The result is = "<<result<<endl;
     return 0;
 }
